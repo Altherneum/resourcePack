@@ -1,0 +1,31 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Archive Release
+      uses: thedoctor0/zip-release@0.7.1
+      with:
+        type: 'zip'
+        filename: 'resourcePack.zip'
+        exclusions: '*.git* *.github* README.md'
+        
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v.${{ github.run_number }}
+        files: resourcePack.zip
