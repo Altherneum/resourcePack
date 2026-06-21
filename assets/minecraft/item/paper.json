@@ -1,0 +1,33 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:custom_model_data",
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/paper"
+    },
+    "cases": [
+      {
+        "when": "icon_cancel",
+        "model": {
+          "type": "minecraft:model",
+          "model": "altherneum:auto_generated/icon_cancel"
+        }
+      },
+      {
+        "when": "icon_confirm",
+        "model": {
+          "type": "minecraft:model",
+          "model": "altherneum:auto_generated/icon_confirm"
+        }
+      },
+      {
+        "when": "icon_lock",
+        "model": {
+          "type": "minecraft:model",
+          "model": "altherneum:auto_generated/icon_lock"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:custom_model_data",
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/netherite_axe"
+    },
+    "cases": [
+      {
+        "when": "rainbow_axe",
+        "model": {
+          "type": "minecraft:model",
+          "model": "altherneum:auto_generated/rainbow_axe"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:custom_model_data",
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/diamond"
+    },
+    "cases": [
+      {
+        "when": "coin",
+        "model": { "type": "minecraft:model", "model": "altherneum:auto_generated/coin" }
+      },
+      {
+        "when": "donator_medal",
+        "model": { "type": "minecraft:model", "model": "altherneum:auto_generated/donator_medal" }
+      },
+      {
+        "when": "golden_coupon",
+        "model": { "type": "minecraft:model", "model": "altherneum:auto_generated/golden_coupon" }
+      },
+      {
+        "when": "golden_key",
+        "model": { "type": "minecraft:model", "model": "altherneum:auto_generated/golden_key" }
+      },
+      {
+        "when": "sack_of_money",
+        "model": { "type": "minecraft:model", "model": "altherneum:auto_generated/sack_of_money" }
+      }
+    ]
+  }
+}
