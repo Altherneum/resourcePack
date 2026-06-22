@@ -11,7 +11,21 @@
         "when": "ak47", 
         "model": {
           "type": "minecraft:model",
-          "model": "altherneum:ak47"
+          "model": "altherneum:item/ak47"
+        }
+      },
+      {
+        "when": "revolver", 
+        "model": {
+          "type": "minecraft:model",
+          "model": "altherneum:item/revolver"
+        }
+      },
+      {
+        "when": "shotgun", 
+        "model": {
+          "type": "minecraft:model",
+          "model": "altherneum:item/shotgun"
         }
       }
     ]
