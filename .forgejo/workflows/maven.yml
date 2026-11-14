@@ -1,0 +1,36 @@
+name: Resource Pack CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Archive Release
+      run: |
+        zip -r resourcePack.zip . -x '*.git*' '*.github*' '*.forgejo*' 'README.md'
+        mkdir -p dist/release
+        mv resourcePack.zip dist/release/
+
+    - name: Forgejo release
+      if: ${{ github.event_name != 'pull_request' }}
+      uses: actions/forgejo-release@v2.7.3
+      with:
+        tag: v.${{ github.run_number }}
+        direction: upload
+        url: https://git.altherneum.fr
+        repo: Altherneum/resourcePack
+        token: ${{ secrets.WRITE_TOKEN_RELEASE_ACTION }}
+        release-dir: dist/release
+        release-notes: "RELEASE v.${{ github.run_number }}"
